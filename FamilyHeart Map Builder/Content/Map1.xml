@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BUILDER>
+  <SCENE>
+    <TILEMAPS>
+      <PATH src ="1">Content/Map1.png</PATH>
+    </TILEMAPS>
+    
+    <TILES index ="1">
+      <TILE src ="1">
+        <NAME>Grass1</NAME>
+        <RECT>0 26 410 178</RECT>
+        <FLAG>0</FLAG>
+      </TILE>
+      <TILE src ="2">
+        <NAME>Grass2</NAME>
+        <RECT>0 178 404 369</RECT>
+        <FLAG>0</FLAG>
+      </TILE>
+      <TILE src ="3">
+        <NAME>Grass3</NAME>
+        <RECT>0 369 411 564</RECT>
+        <FLAG>0</FLAG>
+      </TILE>
+      <TILE src ="4">
+        <NAME>Rock1</NAME>
+        <RECT>423 28 511 93</RECT>
+        <FLAG>0</FLAG>
+      </TILE>
+     </TILES>
+   
+
+    <GAMEOBJECTS>
+      
+    </GAMEOBJECTS>
+    
+  </SCENE>
+</BUILDER>
