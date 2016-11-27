@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Xml;
 
+using Fam
 using Familyheart_DX11.SceneManager;
 using Familyheart_DX11.GUI;
 
@@ -48,12 +49,32 @@ namespace Familyheart_DX11.Utility
 
         }*/
 
-        public static Scene LoadScene(this ContentManager manager, string path)
+        public static bool SaveTileMap(this ContentManager manager, string path)
         {
-            Scene scene = new Scene();
+            if (File.Exists(path))
+            {
+#if BUILDER
+            Debug.WriteLine("File Exists before");
+#else
+             throw new Exception("File exists before");
+#endif
+            }
+
+            StreamWriter writer = new StreamWriter(path);
+
+
+
+
+            return true;
+        }
+
+        public static TileMap LoadTiles(this ContentManager manager, string path)
+        {
+            TileMap scene = new TileMap();
             StreamReader reader = new StreamReader(path);
-            string error = "The scene at: " + path + " doesn't exist";
-            if (reader == null) throw new Exception(error);
+            
+            
+            
             string line = " ";
             int n;
             int currentTexThrough = 0;
@@ -72,6 +93,7 @@ namespace Familyheart_DX11.Utility
                     splited = line.Split(' ');
                     if (splited.Length > 1)
                     {
+                        Console.WriteLine(splited[1]);
                         n = Convert.ToInt32(splited[1]);
                         currentTexThrough = n - 1;
                     }
@@ -105,7 +127,7 @@ namespace Familyheart_DX11.Utility
                     string tag = line;
 
 
-                    scene.ObjectSprites.Add(new GameObject(name, tex, takeRect, (GameobjectFlag)flags, tag));
+                    scene.ObjectSprites.Add(new SegmentDefinition(name, takeRect,(SegmentFlag)flags,tex, tag));
                    
                 }
 
@@ -182,7 +204,7 @@ namespace Familyheart_DX11.Utility
             cam.FollowArea.Y = device.Viewport.Height * 0.5f;
         }
 
-        #region Draw Intilize
+#region Draw Intilize
         public static void IntilizeDraw(this SpriteBatch batch, Effect effect, Camera2D camFollow)
         {
             batch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, effect, camFollow.GetMatrixTransform());
@@ -197,7 +219,7 @@ namespace Familyheart_DX11.Utility
         {
             batch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
         }
-        #endregion
+#endregion
 
     }
 }

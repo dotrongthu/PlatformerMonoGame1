@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 namespace Familyheart_DX11
 {
    
-        public enum GameobjectFlag
+        public enum SegmentFlag
         {
+            NORMAL,
+            SOILD,
+            EMPTY,
 
         }
     

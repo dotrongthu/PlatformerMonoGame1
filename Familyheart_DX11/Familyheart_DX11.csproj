@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Familyheart_DX11</RootNamespace>
     <AssemblyName>Familyheart_DX11</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -60,15 +60,15 @@
     <Compile Include="Flag.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Graphics\Animation.cs" />
-    <Compile Include="Graphics\ScreenManager.cs" />
+    <Compile Include="SceneManager\Scene.cs" />
     <Compile Include="GUI\Text.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Physics\Collision.cs" />
     <Compile Include="Physics\Ledge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SceneManager\Scene.cs" />
-    <Compile Include="SceneManager\SceneTotalLoader.cs" />
+    <Compile Include="SceneManager\SegmentDefinition.cs" />
+    <Compile Include="SceneManager\TileMap.cs" />
     <Compile Include="Utility\ExtensionsMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

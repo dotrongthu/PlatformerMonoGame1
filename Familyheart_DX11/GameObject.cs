@@ -29,11 +29,8 @@ namespace Familyheart_DX11
         private List<Texture2D> texture;
 
         public string tag;
-        public int srcIndex;
 
         private SheetAnimation sheetAni;
-
-        GameobjectFlag flag;
 
 
         public Vector2 Position
@@ -85,14 +82,7 @@ namespace Familyheart_DX11
         /// <param name="_flag"></param>
         /// <param name="_tag"></param>
 
-        public GameObject(string _name, int _srcIndex, Rectangle _drawRect, GameobjectFlag _flag, string _tag)
-        {
-            name = _name;
-            srcIndex = _srcIndex;
-            drawArea = _drawRect;
-            flag = _flag;
-            tag = _tag;
-        }
+      
 
         public GameObject(Vector2 position, float rotation, Vector2 scale, Texture2D tex)
         {
